@@ -1,0 +1,201 @@
+ManifestFileVersion: 0
+CRC: 4281091607
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 3cfd42c4a98e25f7e0bdfc5d5be76e85
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 949bd36d14b6fe13a5bf54b68383d942
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 3cfd42c4a98e25f7e0bdfc5d5be76e85
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- "Assets/Editor/ArtRes/animation/Enemy/NPC3/Walk3/\u56FE\u5C42 13.png"
+- Assets/Editor/ArtRes/animation/Enemy/NPC3/Jump3.anim
+- "Assets/Editor/ArtRes/animation/Enemy/NPC2/Walk2/\u56FE\u5C42 1.png"
+- "Assets/Editor/ArtRes/animation/Idle/\u56FE\u5C42 16.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC2/Walk2/\u56FE\u5C42 15.png"
+- Assets/Editor/ArtRes/animation/Enemy/NPC3/Idle3.anim
+- "Assets/Editor/ArtRes/animation/Enemy/NPC1/Walk1/\u56FE\u5C42 3.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC3/Jump3/\u56FE\u5C42 8.png"
+- Assets/Editor/ArtRes/animation/Enemy/NPC2/Walk2.anim
+- "Assets/Editor/ArtRes/animation/Move/\u56FE\u5C42 11.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC2/Jump2/\u56FE\u5C42 1.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC1/Jump1/\u56FE\u5C42 1.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC2/Jump2/\u56FE\u5C42 10.png"
+- "Assets/Editor/ArtRes/animation/Move/\u56FE\u5C42 16.png"
+- "Assets/Editor/ArtRes/animation/Jump/\u56FE\u5C42 10.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC3/Jump3/\u56FE\u5C42 1.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC2/Walk2/\u56FE\u5C42 2.png"
+- "Assets/Editor/ArtRes/animation/Jump/\u56FE\u5C42 15.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC1/Walk1/\u56FE\u5C42 15.png"
+- Assets/Editor/ArtRes/animation/Enemy/NPC1/NPC1.controller
+- "Assets/Editor/ArtRes/animation/Enemy/NPC3/Walk3/\u56FE\u5C42 8.png"
+- "Assets/Editor/ArtRes/animation/Move/\u56FE\u5C42 7.png"
+- "Assets/Editor/ArtRes/animation/Move/\u56FE\u5C42 9.png"
+- Assets/Editor/ArtRes/animation/Enemy/NPC1/Idle1.anim
+- "Assets/Editor/ArtRes/animation/Enemy/NPC2/Walk2/\u56FE\u5C42 13.png"
+- Assets/Editor/ArtRes/animation/Player/ChangeMirror.anim
+- "Assets/Editor/ArtRes/animation/Enemy/NPC1/Jump1/\u56FE\u5C42 7.png"
+- Assets/Editor/ArtRes/animation/Player/ChangePlayer.anim
+- "Assets/Editor/ArtRes/animation/Move/\u56FE\u5C42 1.png"
+- "Assets/Editor/ArtRes/animation/Move/\u56FE\u5C42 13.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC1/Jump1/\u56FE\u5C42 2.png"
+- "Assets/Editor/ArtRes/animation/Jump/\u56FE\u5C42 4.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC1/Walk1/\u56FE\u5C42 13.png"
+- "Assets/Editor/ArtRes/animation/Move/\u56FE\u5C42 5.png"
+- Assets/Editor/ArtRes/animation/Player/Run.anim
+- "Assets/Editor/ArtRes/animation/Enemy/NPC3/Walk3/\u56FE\u5C42 17.png"
+- Assets/Editor/ArtRes/animation/Player/Control.anim
+- "Assets/Editor/ArtRes/animation/Enemy/NPC1/Walk1/\u56FE\u5C42 8.png"
+- Assets/Editor/ArtRes/animation/Player/Jump.anim
+- "Assets/Editor/ArtRes/animation/Enemy/NPC1/Walk1/\u56FE\u5C42 6.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC2/Jump2/\u56FE\u5C42 7.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC3/Jump3/\u56FE\u5C42 10.png"
+- "Assets/Editor/ArtRes/animation/Move/\u56FE\u5C42 4.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC1/Jump1/\u56FE\u5C42 4.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC2/Walk2/\u56FE\u5C42 9.png"
+- "Assets/Editor/ArtRes/animation/Idle/\u56FE\u5C42 20.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC3/Jump3/\u56FE\u5C42 7.png"
+- Assets/Editor/ArtRes/animation/Player/Recycle.anim
+- "Assets/Editor/ArtRes/animation/Jump/\u56FE\u5C42 5.png"
+- "Assets/Editor/ArtRes/animation/Idle/\u56FE\u5C42 14.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC3/Walk3/\u56FE\u5C42 7.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC3/Walk3/\u56FE\u5C42 4.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC2/Walk2/\u56FE\u5C42 11.png"
+- "Assets/Editor/ArtRes/animation/Move/\u56FE\u5C42 12.png"
+- "Assets/Editor/ArtRes/animation/Idle/\u56FE\u5C42 11.png"
+- "Assets/Editor/ArtRes/animation/Idle/\u56FE\u5C42 6.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC2/Jump2/\u56FE\u5C42 9.png"
+- "Assets/Editor/ArtRes/animation/Jump/\u56FE\u5C42 7.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC3/Walk3/\u56FE\u5C42 9.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC1/Walk1/\u56FE\u5C42 1.png"
+- Assets/Editor/ArtRes/animation/Player/Death.anim
+- "Assets/Editor/ArtRes/animation/Enemy/NPC3/Walk3/\u56FE\u5C42 11.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC3/Walk3/\u56FE\u5C42 16.png"
+- "Assets/Editor/ArtRes/animation/Move/\u56FE\u5C42 10.png"
+- "Assets/Editor/ArtRes/animation/Move/\u56FE\u5C42 14.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC1/Walk1/\u56FE\u5C42 2.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC1/Jump1/\u56FE\u5C42 5.png"
+- "Assets/Editor/ArtRes/animation/Idle/\u56FE\u5C42 12.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC3/Walk3/\u56FE\u5C42 5.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC2/Walk2/\u56FE\u5C42 6.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC1/Jump1/\u56FE\u5C42 9.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC2/Walk2/\u56FE\u5C42 16.png"
+- Assets/Editor/ArtRes/animation/Enemy/NPC1/Jump1.anim
+- "Assets/Editor/ArtRes/animation/Enemy/NPC3/Walk3/\u56FE\u5C42 2.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC3/Walk3/\u56FE\u5C42 12.png"
+- "Assets/Editor/ArtRes/animation/Idle/\u56FE\u5C42 27.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC2/Jump2/\u56FE\u5C42 4.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC2/Jump2/\u56FE\u5C42 5.png"
+- Assets/Editor/ArtRes/animation/Player/Hold.anim
+- "Assets/Editor/ArtRes/animation/Idle/\u56FE\u5C42 26.png"
+- "Assets/Editor/ArtRes/animation/Jump/\u56FE\u5C42 8.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC3/Jump3/\u56FE\u5C42 3.png"
+- Assets/Editor/ArtRes/animation/Player/Transfer.anim
+- "Assets/Editor/ArtRes/animation/Jump/\u56FE\u5C42 14.png"
+- "Assets/Editor/ArtRes/animation/Jump/\u56FE\u5C42 16.png"
+- Assets/Editor/ArtRes/animation/Player/Idle.anim
+- "Assets/Editor/ArtRes/animation/Idle/\u56FE\u5C42 25.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC1/Walk1/\u56FE\u5C42 11.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC2/Jump2/\u56FE\u5C42 8.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC1/Walk1/\u56FE\u5C42 7.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC3/Jump3/\u56FE\u5C42 9.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC2/Walk2/\u56FE\u5C42 7.png"
+- "Assets/Editor/ArtRes/animation/Idle/\u56FE\u5C42 13.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC2/Jump2/\u56FE\u5C42 11.png"
+- "Assets/Editor/ArtRes/animation/Idle/\u56FE\u5C42 22.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC2/Walk2/\u56FE\u5C42 3.png"
+- Assets/Editor/ArtRes/animation/Player/PlayerAnimatorController.controller
+- Assets/Editor/ArtRes/animation/Enemy/NPC3/NPC3.controller
+- "Assets/Editor/ArtRes/animation/Idle/\u56FE\u5C42 23.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC3/Walk3/\u56FE\u5C42 3.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC1/Walk1/\u56FE\u5C42 5.png"
+- "Assets/Editor/ArtRes/animation/Idle/\u56FE\u5C42 9.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC1/Walk1/\u56FE\u5C42 4.png"
+- "Assets/Editor/ArtRes/animation/Idle/\u56FE\u5C42 24.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC3/Jump3/\u56FE\u5C42 6.png"
+- "Assets/Editor/ArtRes/animation/Idle/\u56FE\u5C42 28.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC2/Jump2/\u56FE\u5C42 3.png"
+- "Assets/Editor/ArtRes/animation/Idle/\u56FE\u5C42 2.png"
+- Assets/Editor/ArtRes/animation/Enemy/NPC1/Walk1.anim
+- "Assets/Editor/ArtRes/animation/Enemy/NPC3/Walk3/\u56FE\u5C42 14.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC1/Walk1/\u56FE\u5C42 14.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC2/Walk2/\u56FE\u5C42 14.png"
+- "Assets/Editor/ArtRes/animation/Move/\u56FE\u5C42 6.png"
+- "Assets/Editor/ArtRes/animation/Idle/\u56FE\u5C42 18.png"
+- "Assets/Editor/ArtRes/animation/Move/\u56FE\u5C42 2.png"
+- "Assets/Editor/ArtRes/animation/Move/\u56FE\u5C42 3.png"
+- Assets/Editor/ArtRes/animation/Enemy/NPC2/Idie2.anim
+- Assets/Editor/ArtRes/animation/Player/Close.anim
+- "Assets/Editor/ArtRes/animation/Idle/\u56FE\u5C42 1.png"
+- Assets/Editor/ArtRes/animation/Player/EnterNextLevel.anim
+- "Assets/Editor/ArtRes/animation/Jump/\u56FE\u5C42 6.png"
+- "Assets/Editor/ArtRes/animation/Jump/\u56FE\u5C42 12.png"
+- Assets/Editor/ArtRes/animation/Enemy/NPC2/Jump2.anim
+- "Assets/Editor/ArtRes/animation/Move/\u56FE\u5C42 15.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC1/Jump1/\u56FE\u5C42 3.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC1/Walk1/\u56FE\u5C42 10.png"
+- "Assets/Editor/ArtRes/animation/Jump/\u56FE\u5C42 1.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC3/Walk3/\u56FE\u5C42 6.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC2/Walk2/\u56FE\u5C42 5.png"
+- "Assets/Editor/ArtRes/animation/Idle/\u56FE\u5C42 15.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC2/Jump2/\u56FE\u5C42 6.png"
+- "Assets/Editor/ArtRes/animation/Jump/\u56FE\u5C42 2.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC1/Walk1/\u56FE\u5C42 17.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC2/Walk2/\u56FE\u5C42 10.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC3/Walk3/\u56FE\u5C42 10.png"
+- "Assets/Editor/ArtRes/animation/Jump/\u56FE\u5C42 9.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC2/Walk2/\u56FE\u5C42 4.png"
+- Assets/Editor/ArtRes/animation/Player/Hit.anim
+- "Assets/Editor/ArtRes/animation/Enemy/NPC1/Jump1/\u56FE\u5C42 6.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC3/Jump3/\u56FE\u5C42 2.png"
+- "Assets/Editor/ArtRes/animation/Idle/\u56FE\u5C42 8.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC2/Jump2/\u56FE\u5C42 2.png"
+- "Assets/Editor/ArtRes/animation/Idle/\u56FE\u5C42 10.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC3/Jump3/\u56FE\u5C42 5.png"
+- "Assets/Editor/ArtRes/animation/Jump/\u56FE\u5C42 11.png"
+- "Assets/Editor/ArtRes/animation/Idle/\u56FE\u5C42 17.png"
+- Assets/Editor/ArtRes/animation/Player/Fall.anim
+- "Assets/Editor/ArtRes/animation/Enemy/NPC3/Walk3/\u56FE\u5C42 1.png"
+- Assets/Editor/ArtRes/animation/Enemy/NPC2/NPC2.controller
+- "Assets/Editor/ArtRes/animation/Jump/\u56FE\u5C42 13.png"
+- "Assets/Editor/ArtRes/animation/Idle/\u56FE\u5C42 21.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC2/Walk2/\u56FE\u5C42 12.png"
+- "Assets/Editor/ArtRes/animation/Jump/\u56FE\u5C42 3.png"
+- "Assets/Editor/ArtRes/animation/Idle/\u56FE\u5C42 4.png"
+- Assets/Editor/ArtRes/animation/Player/Land.anim
+- "Assets/Editor/ArtRes/animation/Enemy/NPC3/Jump3/\u56FE\u5C42 4.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC1/Jump1/\u56FE\u5C42 8.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC2/Walk2/\u56FE\u5C42 8.png"
+- "Assets/Editor/ArtRes/animation/Move/\u56FE\u5C42 8.png"
+- "Assets/Editor/ArtRes/animation/Idle/\u56FE\u5C42 19.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC2/Walk2/\u56FE\u5C42 17.png"
+- Assets/Editor/ArtRes/animation/Enemy/NPC3/Walk3.anim
+- "Assets/Editor/ArtRes/animation/Idle/\u56FE\u5C42 5.png"
+- "Assets/Editor/ArtRes/animation/Idle/\u56FE\u5C42 3.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC1/Walk1/\u56FE\u5C42 16.png"
+- "Assets/Editor/ArtRes/animation/Idle/\u56FE\u5C42 7.png"
+- Assets/Editor/ArtRes/animation/Player/Dash.anim
+- "Assets/Editor/ArtRes/animation/Enemy/NPC1/Walk1/\u56FE\u5C42 9.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC3/Jump3/\u56FE\u5C42 11.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC1/Walk1/\u56FE\u5C42 12.png"
+- "Assets/Editor/ArtRes/animation/Enemy/NPC3/Walk3/\u56FE\u5C42 15.png"
+Dependencies:
+- D:/github/Light/AssetBundles/Android/materials

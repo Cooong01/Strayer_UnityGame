@@ -1,0 +1,26 @@
+ManifestFileVersion: 0
+CRC: 3046409556
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: a80ac10714a271573ace3062c7047111
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b30fce1a9ad74efb72be6c308c56e365
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: a80ac10714a271573ace3062c7047111
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Resources/shaders/NPC3.shadergraph
+- Assets/Resources/shaders/NPC1.shadergraph
+- Assets/Resources/shaders/NPC2.shadergraph
+Dependencies: []

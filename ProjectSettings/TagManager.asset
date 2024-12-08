@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - mirror
+  - mirrorPlace
+  - Draggable
+  - UI
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Reflection
+  - Water
+  - UI
+  - Ground
+  - Wall
+  - Player
+  - MirrorPlace
+  - RainBowLight
+  - WhiteLight
+  - Mirror
+  - Enemy
+  - Entity
+  - light source
+  - End
+  - Start
+  - background
+  - Talk
+  - detection
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

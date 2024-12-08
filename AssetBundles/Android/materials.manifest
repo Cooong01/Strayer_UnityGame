@@ -1,0 +1,55 @@
+ManifestFileVersion: 0
+CRC: 2130941196
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 5f237ef328f73d506042344d6a06317c
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b96014243c07048b798c909549e8e41a
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 5f237ef328f73d506042344d6a06317c
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 62
+  Script: {instanceID: 0}
+- Class: 84
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: af7181f404f1447c0a7a17b3070b952b, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 134
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: Unity.2D.SpriteShape.Runtime
+  ClassName: UnityEngine.U2D.AngleRange
+- AssemblyName: Unity.2D.SpriteShape.Runtime
+  ClassName: UnityEngine.U2D.CornerSprite
+Assets:
+- Assets/Editor/ArtRes/materials/New Physic Material.physicMaterial
+- Assets/Editor/ArtRes/materials/LinkSpriteShapeProfile.asset
+- Assets/Editor/ArtRes/materials/white.mat
+- Assets/Editor/ArtRes/materials/RainBow.mat
+- Assets/Editor/ArtRes/materials/NoFriction.physicMaterial
+- Assets/Editor/ArtRes/materials/Water.mat
+- Assets/Editor/ArtRes/materials/WallSpriteShapeProfile.asset
+- Assets/Editor/ArtRes/materials/New Physics Material 2D.physicsMaterial2D
+- Assets/Editor/ArtRes/materials/NoFriction2D.physicsMaterial2D
+- Assets/Editor/ArtRes/materials/NPC1.mat
+- Assets/Editor/ArtRes/materials/NPC2.mat
+- Assets/Editor/ArtRes/materials/NPC3.mat
+Dependencies:
+- D:/github/Light/AssetBundles/Android/animation
+- D:/github/Light/AssetBundles/Android/shaders
+- D:/github/Light/AssetBundles/Android/sprites
+- D:/github/Light/AssetBundles/Android/textures

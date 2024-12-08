@@ -1,0 +1,59 @@
+ManifestFileVersion: 0
+CRC: 459745682
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: textures
+      Dependencies: {}
+    Info_1:
+      Name: apps
+      Dependencies:
+        Dependency_0: sprites
+    Info_2:
+      Name: sprites
+      Dependencies: {}
+    Info_3:
+      Name: shaders
+      Dependencies: {}
+    Info_4:
+      Name: laser
+      Dependencies:
+        Dependency_0: sprites
+        Dependency_1: materials
+    Info_5:
+      Name: artres
+      Dependencies:
+        Dependency_0: sprites
+        Dependency_1: animation
+        Dependency_2: materials
+    Info_6:
+      Name: enemy
+      Dependencies:
+        Dependency_0: animation
+    Info_7:
+      Name: animation
+      Dependencies:
+        Dependency_0: materials
+    Info_8:
+      Name: ui
+      Dependencies:
+        Dependency_0: sprites
+    Info_9:
+      Name: materials
+      Dependencies:
+        Dependency_0: textures
+        Dependency_1: sprites
+        Dependency_2: shaders
+        Dependency_3: animation
+    Info_10:
+      Name: player
+      Dependencies: {}
+    Info_11:
+      Name: level
+      Dependencies:
+        Dependency_0: sprites
+        Dependency_1: animation
+        Dependency_2: materials
+    Info_12:
+      Name: sound
+      Dependencies: {}

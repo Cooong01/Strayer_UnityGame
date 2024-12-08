@@ -1,0 +1,36 @@
+ManifestFileVersion: 0
+CRC: 3881543174
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: a5438892356beed51dd4ac2123fd05d1
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 230da06a02f8349f14d989600200858c
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: a5438892356beed51dd4ac2123fd05d1
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: ec8da9418a6bf493e93ef4c7b7575847, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- "Assets/Editor/ArtRes/Player/\u767D\u732B.psb"
+Dependencies: []

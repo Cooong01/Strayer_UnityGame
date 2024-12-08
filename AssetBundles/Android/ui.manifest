@@ -1,0 +1,124 @@
+ManifestFileVersion: 0
+CRC: 4239298353
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 4014c476dc3cd46eb41765d3d680ca61
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 1146a25db1c5ce298d0c69a57cb2a55f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 4014c476dc3cd46eb41765d3d680ca61
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: c467a30cbcca7fc45851c26226989548, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1014ffe593ffc9c4bbfddd355c29b199, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1e1f50136088cd641ac09e46a72e32b6, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b68c0cb21aba97043b3878f2d400aec4, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4f829073595cabf4c8cbea79cc695b56, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: a34fc403287553441a0a96ad8621963e, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3dc1265ddc3874c4ca3f105da6a430d0, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6a2ecec51546b2b4caa7cf4826a65647, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f6de119118d4d7e429a01e23a9732e66, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 370eb50fbff32cb4e84cce8569c32898, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 7733026097c1c614cbc82a97ef08c948, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b7ae2bb4ac5d1944db4724e13928870b, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: c67fcf373a403934ea26a783b0a913a2, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5eb5c9c7b1f59b44eac51fc586fa1000, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: db910a7c8ad5ea9479fd121e92883a03, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f8ab22f9496cb8b479369254771587ec, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.FaceInfo_Legacy
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.FontAssetCreationSettings
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.KerningTable
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_Character
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_FontFeatureTable
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_FontWeightPair
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.VertexGradient
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.PersistentCallGroup
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.FaceInfo
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.Glyph
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.GlyphMetrics
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.GlyphRect
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.AnimationTriggers
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.Button/ButtonClickedEvent
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.ColorBlock
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.Navigation
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.SpriteState
+Assets:
+- Assets/Editor/ArtRes/ui/PanelLose.prefab
+- Assets/Editor/ArtRes/ui/PanelStore.prefab
+- Assets/Editor/ArtRes/ui/PanelMain.prefab
+- Assets/Editor/ArtRes/ui/PanelForums.prefab
+- Assets/Editor/ArtRes/ui/TaikWithOther.prefab
+- Assets/Editor/ArtRes/ui/PanelPhoneHome.prefab
+- Assets/Editor/ArtRes/ui/PanelShortVideo.prefab
+- Assets/Editor/ArtRes/ui/PanelPlay.prefab
+- Assets/Editor/ArtRes/ui/PanelTip.prefab
+- Assets/Editor/ArtRes/ui/PanelStaff.prefab
+Dependencies:
+- D:/github/Light/AssetBundles/Android/sprites

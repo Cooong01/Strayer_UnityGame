@@ -1,0 +1,29 @@
+ManifestFileVersion: 0
+CRC: 2882279484
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 3d0de24a0cb522c1cd1ccbc661248fac
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 732b66cb9c9c6af7ed7bfc0250f2e285
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 3d0de24a0cb522c1cd1ccbc661248fac
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 84
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Editor/ArtRes/textures/water/WaterRT.renderTexture
+- Assets/Editor/ArtRes/textures/water/DisplacementMap2.png
+- Assets/Editor/ArtRes/textures/water/Perlin.jpg
+- Assets/Editor/ArtRes/textures/water/DisplacementMap.png
+- Assets/Editor/ArtRes/textures/water/DisplacementDetail2.png
+- Assets/Editor/ArtRes/textures/water/DisplacementDetail.jpg
+Dependencies: []

@@ -1,0 +1,115 @@
+ManifestFileVersion: 0
+CRC: 3038070254
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: b551fce815935c9c122fb4c98771152c
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 94cc32d9ea879401e4ec1733b86e87aa
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: b551fce815935c9c122fb4c98771152c
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 57c008f954fe54a8bb972de1018a2cb8, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: ec8da9418a6bf493e93ef4c7b7575847, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.U2D.SpriteBone
+Assets:
+- Assets/Editor/ArtRes/sprites/1111.png
+- Assets/Editor/ArtRes/sprites/holdMirror.png
+- Assets/Editor/ArtRes/sprites/characterChange.png
+- Assets/Editor/ArtRes/sprites/IMG_0363.png
+- Assets/Editor/ArtRes/sprites/shelf.png
+- Assets/Editor/ArtRes/sprites/2-1.png
+- Assets/Editor/ArtRes/sprites/3-2.png
+- Assets/Editor/ArtRes/sprites/2-3.png
+- Assets/Editor/ArtRes/sprites/3-3.png
+- Assets/Editor/ArtRes/sprites/backToHome.png
+- Assets/Editor/ArtRes/sprites/2-2.png
+- Assets/Editor/ArtRes/sprites/que ren fang zhi.png
+- Assets/Editor/ArtRes/sprites/tishi.png
+- Assets/Editor/ArtRes/sprites/1-1.png
+- Assets/Editor/ArtRes/sprites/APPMember.png
+- Assets/Editor/ArtRes/sprites/wall2.png
+- Assets/Editor/ArtRes/sprites/liaotiankuang.png
+- Assets/Editor/ArtRes/sprites/Mirror2-1.png
+- Assets/Editor/ArtRes/sprites/0-1.png
+- Assets/Editor/ArtRes/sprites/Mirror1-1.png
+- Assets/Editor/ArtRes/sprites/MirrorOrientationChange.png
+- Assets/Editor/ArtRes/sprites/zhuanV2.png
+- Assets/Editor/ArtRes/sprites/wall3.png
+- Assets/Editor/ArtRes/sprites/guangxianshitihuazhuanhuanqi.png
+- Assets/Editor/ArtRes/sprites/3-1.png
+- Assets/Editor/ArtRes/sprites/guangxianfasheqi.png
+- Assets/Editor/ArtRes/sprites/Enemy.png
+- Assets/Editor/ArtRes/sprites/fengmian2.png
+- Assets/Editor/ArtRes/sprites/MirrorModeChange.png
+- Assets/Editor/ArtRes/sprites/0-2.png
+- Assets/Editor/ArtRes/sprites/zhuan.png
+- Assets/Editor/ArtRes/sprites/Rush.png
+- Assets/Editor/ArtRes/sprites/jiaoshoujia.png
+- Assets/Editor/ArtRes/sprites/shibaiyemian2.png
+- Assets/Editor/ArtRes/sprites/1-4.png
+- Assets/Editor/ArtRes/sprites/333902BEF3E751F91D287766AC00286E.jpg
+- Assets/Editor/ArtRes/sprites/laji.png
+- Assets/Editor/ArtRes/sprites/liewen.png
+- Assets/Editor/ArtRes/sprites/0-4.png
+- Assets/Editor/ArtRes/sprites/1-2.png
+- Assets/Editor/ArtRes/sprites/wuji.png
+- Assets/Editor/ArtRes/sprites/bao cun.png
+- Assets/Editor/ArtRes/sprites/IMG_0364.png
+- Assets/Editor/ArtRes/sprites/tutorral.png
+- Assets/Editor/ArtRes/sprites/BackToGame.png
+- Assets/Editor/ArtRes/sprites/1-3.png
+- Assets/Editor/ArtRes/sprites/IMG_0362.png
+- Assets/Editor/ArtRes/sprites/0-3.png
+- Assets/Editor/ArtRes/sprites/Mirror3-1.png
+- Assets/Editor/ArtRes/sprites/PhoneBG.png
+- Assets/Editor/ArtRes/sprites/recycle1.png
+- Assets/Editor/ArtRes/sprites/APPForums.png
+- Assets/Editor/ArtRes/sprites/pause.png
+- Assets/Editor/ArtRes/sprites/xiangquan.psb
+- Assets/Editor/ArtRes/sprites/chong kai.png
+- Assets/Editor/ArtRes/sprites/APPShortVideo.png
+- Assets/Editor/ArtRes/sprites/gan.png
+- Assets/Editor/ArtRes/sprites/Mirror1-2.png
+- Assets/Editor/ArtRes/sprites/MainBg.png
+- Assets/Editor/ArtRes/sprites/Jump.png
+- Assets/Editor/ArtRes/sprites/quitGame.png
+- Assets/Editor/ArtRes/sprites/Mirror3-2.png
+- Assets/Editor/ArtRes/sprites/Mirror2-2.png
+- Assets/Editor/ArtRes/sprites/suo.png
+- Assets/Editor/ArtRes/sprites/zhu ye.png
+- Assets/Editor/ArtRes/sprites/tanchuang.png
+- Assets/Editor/ArtRes/sprites/back.png
+- Assets/Editor/ArtRes/sprites/APPShopping.png
+- Assets/Editor/ArtRes/sprites/cat.png
+- Assets/Editor/ArtRes/sprites/fang zhi jing zi.png
+- Assets/Editor/ArtRes/sprites/wall.png
+- Assets/Editor/ArtRes/sprites/PhonePatten.png
+- Assets/Editor/ArtRes/sprites/recycle2.png
+- Assets/Editor/ArtRes/sprites/ji xu.png
+- Assets/Editor/ArtRes/sprites/BackToHome2.png
+- Assets/Editor/ArtRes/sprites/fengmian2 1.png
+Dependencies: []

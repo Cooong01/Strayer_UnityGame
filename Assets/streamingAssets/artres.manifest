@@ -1,0 +1,119 @@
+ManifestFileVersion: 0
+CRC: 986667490
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: ca5d409aaa3001969cc21f06d2444fcd
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 82945b29d4ba911b8df88380cb6a4784
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: ca5d409aaa3001969cc21f06d2444fcd
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 50
+  Script: {instanceID: 0}
+- Class: 58
+  Script: {instanceID: 0}
+- Class: 60
+  Script: {instanceID: 0}
+- Class: 61
+  Script: {instanceID: 0}
+- Class: 62
+  Script: {instanceID: 0}
+- Class: 64
+  Script: {instanceID: 0}
+- Class: 68
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 917cc3d353ae2414aa66b6d1cb86b5f3, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: eb9ef1c25ac86424fad55cde5522c25b, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: dbe406abb0726124e902a4fb07f07d0c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 509b89d389083f94f9ea22aecc887c59, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 36188b985f5204545a0cea3d8bdcda73, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: dbf373adca7ed7f458374dca6c8e9d20, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: ef622607993e62a4994ef0115c09d4fd, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f775079564814264eb0ebb95f5ed6ba3, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: fd4a4d20b10c67f4d8f62d4ec2057365, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6548382457a1df3458739b32e6539872, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 01aa62cbf7234684e815b63358b862b5, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 120
+  Script: {instanceID: 0}
+- Class: 136
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.PersistentCallGroup
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
+Assets:
+- Assets/Editor/ArtRes/guanqia/Level 0-3.prefab
+- Assets/Editor/ArtRes/guanqia/Level 1-1.prefab
+- Assets/Editor/ArtRes/guanqia/Level 1-3.prefab
+- Assets/Editor/ArtRes/prefabs/Mirror1.prefab
+- Assets/Editor/ArtRes/guanqia/Level 2-2.prefab
+- Assets/Editor/ArtRes/prefabs/End.prefab
+- Assets/Editor/ArtRes/prefabs/Mirror3.prefab
+- Assets/Editor/ArtRes/prefabs/ItemRectangle.prefab
+- Assets/Editor/ArtRes/prefabs/ItemTalk.prefab
+- Assets/Editor/ArtRes/prefabs/imageTest.prefab
+- Assets/Editor/ArtRes/prefabs/Mirror2.prefab
+- Assets/Editor/ArtRes/guanqia/Level 0-2.prefab
+- Assets/Editor/ArtRes/prefabs/Level1.prefab
+- Assets/Editor/ArtRes/guanqia/Level 0.prefab
+- Assets/Editor/ArtRes/guanqia/Level 0-4.prefab
+- Assets/Editor/ArtRes/prefabs/wall.prefab
+- Assets/Editor/ArtRes/guanqia/Level 1-2.prefab
+- Assets/Editor/ArtRes/prefabs/Player.prefab
+- Assets/Editor/ArtRes/guanqia/Level 2-3.prefab
+- Assets/Editor/ArtRes/prefabs/Circle.png
+- Assets/Editor/ArtRes/guanqia/Level 2-1.prefab
+Dependencies:
+- D:/github/Light/AssetBundles/Android/animation
+- D:/github/Light/AssetBundles/Android/materials
+- D:/github/Light/AssetBundles/Android/sprites

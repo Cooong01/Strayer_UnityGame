@@ -1,0 +1,32 @@
+ManifestFileVersion: 0
+CRC: 3258702397
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 34c5f6f68339b5aeb2e01de1f279b5e7
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9a2ca7bdbd1871f7131daf57de908e0c
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 34c5f6f68339b5aeb2e01de1f279b5e7
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Editor/ArtRes/sound/transfer.mp3
+- Assets/Editor/ArtRes/sound/Whoosh Reactive Jump 003.mp3
+- Assets/Editor/ArtRes/sound/recycle.mp3
+- Assets/Editor/ArtRes/sound/setMirror.mp3
+- Assets/Editor/ArtRes/sound/Ethereal Golden Clouds Intensity 2.mp3
+- Assets/Editor/ArtRes/sound/Heavy Object Move.mp3
+- Assets/Editor/ArtRes/sound/Victory.mp3
+- Assets/Editor/ArtRes/sound/Selection.mp3
+- Assets/Editor/ArtRes/sound/Yes Button.mp3
+- Assets/Editor/ArtRes/sound/rush.mp3
+- Assets/Editor/ArtRes/sound/Magical Lost Magic Cut 60.mp3
+- Assets/Editor/ArtRes/sound/Whoosh Blade 003.mp3
+- Assets/Editor/ArtRes/sound/Magical Brittlethorn Cut 60.mp3
+Dependencies: []
