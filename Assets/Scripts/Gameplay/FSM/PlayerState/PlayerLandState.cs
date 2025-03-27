@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// ÂäµØ
+/// </summary>
 public class PlayerLandState : PlayerState
 {
     public PlayerLandState(PlayerFSM manager, string animationName) : base(manager, animationName) { }

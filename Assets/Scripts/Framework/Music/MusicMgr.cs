@@ -8,18 +8,15 @@ using UnityEngine.Events;
 /// </summary>
 public class MusicMgr : BaseManager<MusicMgr>
 {
-    //背景音乐播放组件
     private AudioSource bkMusic = null;
-
-    //背景音乐大小
+    //背景音乐音量大小
     private float bkMusicValue = 0.4f;
-
-    //管理正在播放的音效
-    private List<AudioSource> soundList = new List<AudioSource>();
     //音效音量大小
     private float soundValue = 0.4f;
     //音效是否在播放
     private bool soundIsPlay = true;
+    //存储正在播放的音效
+    private List<AudioSource> soundList = new List<AudioSource>();
 
 
     private MusicMgr() 
@@ -32,14 +29,11 @@ public class MusicMgr : BaseManager<MusicMgr>
     {
         if (!soundIsPlay)
             return;
-
-        //不停的遍历容器 检测有没有音效播放完毕 播放完了 就移除销毁它
-        //为了避免边遍历边移除出问题 我们采用逆向遍历
+        //逐帧检测音效是否播完，播完就移出音效池，clip置空放入缓存池
         for (int i = soundList.Count - 1; i >= 0; --i)
         {
             if(!soundList[i].isPlaying)
             {
-                //音效播放完毕了 不再使用了 我们将这个音效切片置空
                 soundList[i].clip = null;
                 PoolMgr.Instance.PushObj(soundList[i].gameObject);
                 soundList.RemoveAt(i);
@@ -51,8 +45,6 @@ public class MusicMgr : BaseManager<MusicMgr>
     //播放背景音乐
     public void PlayBKMusic(string name)
     {
-        //动态创建播放背景音乐的组件 并且 不会过场景移除 
-        //保证背景音乐在过场景时也能播放
         if(bkMusic == null)
         {
             GameObject obj = new GameObject();
@@ -87,7 +79,7 @@ public class MusicMgr : BaseManager<MusicMgr>
         bkMusic.Pause();
     }
 
-    //设置背景音乐大小
+    //调整背景音乐大小
     public void ChangeBKMusicValue(float v)
     {
         bkMusicValue = v;
@@ -105,25 +97,22 @@ public class MusicMgr : BaseManager<MusicMgr>
     /// <param name="callBack">加载结束后的回调</param>
     public void PlaySound(string name, bool isLoop = false, bool isSync = false, UnityAction<AudioSource> callBack = null)
     {
-        //加载音效资源 进行播放
         ABResMgr.Instance.LoadResAsync<AudioClip>("sound", name, (clip) =>
         {
-            //从缓存池中取出音效对象得到对应组件
-            AudioSource source = PoolMgr.Instance.GetObj("Sound/soundObj").GetComponent<AudioSource>();
-            //如果取出来的音效是之前正在使用的 我们先停止它
-            source.Stop();
+            AudioSource source;
+            PoolMgr.Instance.GetObj("music", "soundObj", (t) =>
+            {
+                source = t.GetComponent<AudioSource>();
+                source.Stop();
+                source.clip = clip;
+                source.loop = isLoop;
+                source.volume = soundValue;
+                source.Play();
+                if(!soundList.Contains(source))
+                    soundList.Add(source);
+                callBack?.Invoke(source);
+            });
 
-            source.clip = clip;
-            source.loop = isLoop;
-            source.volume = soundValue;
-            source.Play();
-            //存储容器 用于记录 方便之后判断是否停止
-            //由于从缓存池中取出对象 有可能取出一个之前正在使用的（超上限时）
-            //所以我们需要判断 容器中没有记录再去记录 不要重复去添加即可
-            if(!soundList.Contains(source))
-                soundList.Add(source);
-            //传递给外部使用
-            callBack?.Invoke(source);
         }, isSync);
     }
 
@@ -135,19 +124,15 @@ public class MusicMgr : BaseManager<MusicMgr>
     {
         if(soundList.Contains(source))
         {
-            //停止播放
             source.Stop();
-            //从容器中移除
             soundList.Remove(source);
-            //不用了 清空切片 避免占用
             source.clip = null;
-            //放入缓存池
             PoolMgr.Instance.PushObj(source.gameObject);
         }
     }
 
     /// <summary>
-    /// 改变音效大小
+    /// 调整音效大小
     /// </summary>
     /// <param name="v"></param>
     public void ChangeSoundValue(float v)
@@ -162,7 +147,7 @@ public class MusicMgr : BaseManager<MusicMgr>
     /// <summary>
     /// 继续播放或者暂停所有音效
     /// </summary>
-    /// <param name="isPlay">是否是继续播放 true为播放 false为暂停</param>
+    /// <param name="isPlay">true为播放 false为暂停</param>
     public void PlayOrPauseSound(bool isPlay)
     {
         if(isPlay)
@@ -180,11 +165,7 @@ public class MusicMgr : BaseManager<MusicMgr>
     }
 
     /// <summary>
-    /// 清空音效相关记录 过场景时在清空缓存池之前去调用它
-    /// 重要的事情说三遍！！！
-    /// 过场景时在清空缓存池之前去调用它
-    /// 过场景时在清空缓存池之前去调用它
-    /// 过场景时在清空缓存池之前去调用它
+    /// 清空音效相关记录。注意，缓存池清除记录之前必须调用此方法，否则无法通过音乐管理器找到正在播放的音乐。
     /// </summary>
     public void ClearSound()
     {
@@ -194,7 +175,6 @@ public class MusicMgr : BaseManager<MusicMgr>
             soundList[i].clip = null;
             PoolMgr.Instance.PushObj(soundList[i].gameObject);
         }
-        //清空音效列表
         soundList.Clear();
     }
 }

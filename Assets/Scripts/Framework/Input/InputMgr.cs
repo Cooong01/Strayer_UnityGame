@@ -6,17 +6,13 @@ using UnityEngine.Events;
 
 public class InputMgr : BaseManager<InputMgr>
 {
-    private Dictionary<E_EventType, InputInfo> inputDic = new Dictionary<E_EventType, InputInfo>();
-
-    //当前遍历时取出的输入信息
+    private Dictionary<E_EventType, InputInfo> inputDic = new Dictionary<E_EventType, InputInfo>(); //改键信息池
     private InputInfo nowInputInfo;
 
-    //是否开启了输入系统检测
     private bool isStart;
     //用于在改建时获取输入信息的委托 只有当update中获取到信息的时候 再通过委托传递给外部
     private UnityAction<InputInfo> getInputInfoCallBack;
-    //是否开始检测输入信息
-    private bool isBeginCheckInput = false;
+    private bool isBeginCheckInput = false; //是否开启输入检测
 
     private InputMgr()
     {
@@ -24,7 +20,7 @@ public class InputMgr : BaseManager<InputMgr>
     }
 
     /// <summary>
-    /// 开启或者关闭我们的输入管理模块的检测
+    /// 开启或者关闭输入管理模块的检测
     /// </summary>
     /// <param name="isStart"></param>
     public void StartOrCloseInputMgr(bool isStart)
@@ -33,20 +29,18 @@ public class InputMgr : BaseManager<InputMgr>
     }
 
     /// <summary>
-    /// 提供给外部改键或初始化的方法(键盘)
+    /// 键盘改键
     /// </summary>
     /// <param name="key"></param>
     /// <param name="inputType"></param>
     public void ChangeKeyboardInfo(E_EventType eventType, KeyCode key, InputInfo.E_InputType inputType)
     {
-        //初始化
         if(!inputDic.ContainsKey(eventType))
         {
             inputDic.Add(eventType, new InputInfo(inputType, key));
         }
-        else//改建
+        else
         {
-            //如果之前是鼠标 我们必须要修改它的按键类型
             inputDic[eventType].keyOrMouse = InputInfo.E_KeyOrMouse.Key;
             inputDic[eventType].key = key;
             inputDic[eventType].inputType = inputType;
@@ -54,21 +48,19 @@ public class InputMgr : BaseManager<InputMgr>
     }
 
     /// <summary>
-    /// 提供给外部改键或初始化的方法(鼠标)
+    /// 鼠标改键
     /// </summary>
     /// <param name="eventType"></param>
     /// <param name="mouseID"></param>
     /// <param name="inputType"></param>
     public void ChangeMouseInfo(E_EventType eventType, int mouseID, InputInfo.E_InputType inputType)
     {
-        //初始化
         if (!inputDic.ContainsKey(eventType))
         {
             inputDic.Add(eventType, new InputInfo(inputType, mouseID));
         }
-        else//改建
+        else
         {
-            //如果之前是鼠标 我们必须要修改它的按键类型
             inputDic[eventType].keyOrMouse = InputInfo.E_KeyOrMouse.Mouse;
             inputDic[eventType].mouseID = mouseID;
             inputDic[eventType].inputType = inputType;
@@ -86,45 +78,39 @@ public class InputMgr : BaseManager<InputMgr>
     }
     
     /// <summary>
-    /// 获取下一次的输入信息
+    /// 获取下次输入信息
     /// </summary>
-    /// <param name="callBack"></param>
+    /// <param name="callBack">获取输入以后执行的回调函数</param>
     public void GetInputInfo(UnityAction<InputInfo> callBack)
     {
         getInputInfoCallBack = callBack;
         MonoMgr.Instance.StartCoroutine(BeginCheckInput());
     }
 
+    //检测下次输入
     private IEnumerator BeginCheckInput()
     {
-        //等一帧
+        //因为是下次输入，等一帧
         yield return 0;
-        //一帧后才会被置成true
         isBeginCheckInput = true;
     }
 
     private void InputUpdate()
     {
-        //当委托不为空时 证明想要获取到输入的信息 传递给外部
-        if(isBeginCheckInput)
+        if(isBeginCheckInput) //如果在监听下次输入
         {
-            //当一个键按下时 然后遍历所有按键信息 得到是谁被按下了
             if (Input.anyKeyDown)
             {
                 InputInfo inputInfo = null;
-                //我们需要去遍历监听所有键位的按下 来得到对应输入的信息
-                //键盘
                 Array keyCodes = Enum.GetValues(typeof(KeyCode));
-                foreach (KeyCode inputKey in keyCodes)
+                foreach (KeyCode inputKey in keyCodes) //找出所有收到输入的键
                 {
-                    //判断到底是谁被按下了 那么就可以得到对应的输入的键盘信息
                     if (Input.GetKeyDown(inputKey))
                     {
                         inputInfo = new InputInfo(InputInfo.E_InputType.Down, inputKey);
                         break;
                     }
                 }
-                //鼠标
                 for (int i = 0; i < 3; i++)
                 {
                     if (Input.GetMouseButtonDown(i))
@@ -133,27 +119,18 @@ public class InputMgr : BaseManager<InputMgr>
                         break;
                     }
                 }
-                //把获取到的信息传递给外部
                 getInputInfoCallBack.Invoke(inputInfo);
                 getInputInfoCallBack = null;
-                //检测一次后就停止检测了
                 isBeginCheckInput = false;
             }
         }
-       
-
-
-        //如果外部没有开启检测功能 就不要检测
         if (!isStart)
             return;
-
-        foreach (E_EventType eventType in inputDic.Keys)
+        foreach (E_EventType eventType in inputDic.Keys) //触发改键后的事件
         {
             nowInputInfo = inputDic[eventType];
-            //如果是键盘输入
-            if(nowInputInfo.keyOrMouse == InputInfo.E_KeyOrMouse.Key)
+            if(nowInputInfo.keyOrMouse == InputInfo.E_KeyOrMouse.Key) //键盘输入
             {
-                //是抬起还是按下还是长按
                 switch (nowInputInfo.inputType)
                 {
                     case InputInfo.E_InputType.Down:
@@ -172,8 +149,7 @@ public class InputMgr : BaseManager<InputMgr>
                         break;
                 }
             }
-            //如果是鼠标输入
-            else
+            else //鼠标输入
             {
                 switch (nowInputInfo.inputType)
                 {

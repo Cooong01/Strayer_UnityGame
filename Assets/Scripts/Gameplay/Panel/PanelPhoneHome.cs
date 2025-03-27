@@ -11,7 +11,7 @@ public delegate void TransformAPP();
 
 /// <summary>
 /// 手机Home页面面板
-/// todo:做手机状态栏效果、手机页面滑动效果、按钮长按拖动效果
+/// todo:做手机状态栏效果、手机页面滑动效果
 /// </summary>
 public class PanelPhoneHome : BasePanel, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerUpHandler, IPointerDownHandler,IPointerClickHandler
 {

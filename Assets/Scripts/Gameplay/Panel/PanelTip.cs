@@ -3,6 +3,9 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+/// <summary>
+/// 提示关卡选关面板
+/// </summary>
 public class PanelTip : BasePanel, IPointerUpHandler
 {
 

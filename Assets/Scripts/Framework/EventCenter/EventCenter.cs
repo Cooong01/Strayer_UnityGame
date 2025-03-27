@@ -3,16 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-
+//事件基类，便于事件池同时装有参和无参委托
 public abstract class EventInfoBase{ }
 
-/// <summary>
-/// 用来包裹观察者函数的委托的类
-/// </summary>
-/// <typeparam name="T"></typeparam>
+//有参委托
 public class EventInfo<T>:EventInfoBase
 {
-    //真正观察者 对应的 函数信息 记录在其中
     public UnityAction<T> actions;
 
     public EventInfo(UnityAction<T> action)
@@ -21,9 +17,7 @@ public class EventInfo<T>:EventInfoBase
     }
 }
 
-/// <summary>
-/// 主要用来记录无参无返回值委托
-/// </summary>
+//无参委托
 public class EventInfo: EventInfoBase
 {
     public UnityAction actions;
@@ -36,58 +30,52 @@ public class EventInfo: EventInfoBase
 
 
 /// <summary>
-/// 事件中心模块
+/// 事件中心模块。
+/// 使用流程：在 E_EventType 里填写事件类型枚举，然后调用触发和监听方法。添加监听的时候自动注册事件。
 /// </summary>
 public class EventCenter: BaseManager<EventCenter>
 {
-    //用于记录对应事件 关联的 对应的逻辑
-    private Dictionary<E_EventType, EventInfoBase> eventDic = new Dictionary<E_EventType, EventInfoBase>();
-
+    private Dictionary<E_EventType, EventInfoBase> eventDic = new Dictionary<E_EventType, EventInfoBase>(); //事件池
     private EventCenter() { }
 
     /// <summary>
-    /// 触发事件，有参数。如果需要传入两个以上参数，以元组形式传入。
+    /// 触发有参事件；如果需要传入两个以上参数，以元组形式传入
     /// </summary>
-    /// <param name="eventName">事件名字</param>
+    /// <param name="eventName">事件类型</param>
     public void EventTrigger<T>(E_EventType eventName, T info)
     {
         if(info.GetType().Name != "Vector3")
         {
             Debug.Log("有参事件名：" + eventName + "传入了信息：" + info +"类型为" + info.GetType().Name);
         }
-        //存在关心我的人 才通知别人去处理逻辑
         if(eventDic.ContainsKey(eventName))
         {
-            //去执行对应的逻辑
             (eventDic[eventName] as EventInfo<T>).actions?.Invoke(info);
         }
     }
 
     /// <summary>
-    /// 触发事件 无参数
+    /// 触发有参事件
     /// </summary>
-    /// <param name="eventName"></param>
+    /// <param name="eventName">事件类型</param>
     public void EventTrigger(E_EventType eventName)
     {
         Debug.Log("无参事件名：" + eventName + "被触发了");
-        //存在关心我的人 才通知别人去处理逻辑
         if (eventDic.ContainsKey(eventName))
         {
-            //去执行对应的逻辑
             (eventDic[eventName] as EventInfo).actions?.Invoke();
         }
     }
 
 
     /// <summary>
-    /// 添加事件监听者，有参数。需要两个以上参数时，通过元组来接参数。
+    /// 添加有参事件监听；需要两个以上参数时，通过元组来接参数。
     /// </summary>
-    /// <param name="eventName"></param>
-    /// <param name="func"></param>
+    /// <param name="eventName">事件类型</param>
+    /// <param name="func">回调函数</param>
     public void AddEventListener<T>(E_EventType eventName, UnityAction<T> func)
     {
         Debug.Log("事件名：" + eventName + "添加了有参监听函数，函数名："+func.Method.Name);
-        //如果已经存在关心事件的委托记录 直接添加即可
         if (eventDic.ContainsKey(eventName))
         {
             (eventDic[eventName] as EventInfo<T>).actions += func;
@@ -98,11 +86,14 @@ public class EventCenter: BaseManager<EventCenter>
         }
     }
 
-
+    /// <summary>
+    /// 添加无参事件监听；
+    /// </summary>
+    /// <param name="eventName">事件类型</param>
+    /// <param name="func">回调函数</param>
     public void AddEventListener(E_EventType eventName, UnityAction func)
     {
         Debug.Log("事件名：" + eventName + "添加了无参监听函数，函数名：" + func.Method.Name);
-        //如果已经存在关心事件的委托记录 直接添加即可
         if (eventDic.ContainsKey(eventName))
         {
             (eventDic[eventName] as EventInfo).actions += func;
@@ -114,16 +105,21 @@ public class EventCenter: BaseManager<EventCenter>
     }
 
     /// <summary>
-    /// 移除事件监听者
+    /// 移除有参事件监听
     /// </summary>
-    /// <param name="eventName"></param>
-    /// <param name="func"></param>
+    /// <param name="eventName">事件类型</param>
+    /// <param name="func">回调函数</param>
     public void RemoveEventListener<T>(E_EventType eventName, UnityAction<T> func)
     {
         if (eventDic.ContainsKey(eventName))
             (eventDic[eventName] as EventInfo<T>).actions -= func;
     }
-
+    
+    /// <summary>
+    /// 移除无参事件监听
+    /// </summary>
+    /// <param name="eventName">事件类型</param>
+    /// <param name="func">回调函数</param>
     public void RemoveEventListener(E_EventType eventName, UnityAction func)
     {
         if (eventDic.ContainsKey(eventName))
@@ -131,7 +127,7 @@ public class EventCenter: BaseManager<EventCenter>
     }
 
     /// <summary>
-    /// 清空所有事件的监听
+    /// 清空所有事件
     /// </summary>
     public void Clear()
     {
@@ -139,10 +135,10 @@ public class EventCenter: BaseManager<EventCenter>
     }
 
     /// <summary>
-    /// 清除指定某一个事件的所有监听
+    /// 清除指定事件监听
     /// </summary>
-    /// <param name="eventName"></param>
-    public void Claer(E_EventType eventName)
+    /// <param name="eventName">事件类型</param>
+    public void Clear(E_EventType eventName)
     {
         if (eventDic.ContainsKey(eventName))
             eventDic.Remove(eventName);

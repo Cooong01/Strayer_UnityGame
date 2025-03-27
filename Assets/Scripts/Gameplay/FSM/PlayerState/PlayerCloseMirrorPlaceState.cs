@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 靠近镜子设施
+/// </summary>
 public class PlayerCloseMirrorPlaceState : PlayerState
 {
     public PlayerCloseMirrorPlaceState(PlayerFSM manager, string animationName) : base(manager, animationName) { }
@@ -80,7 +83,7 @@ public class PlayerCloseMirrorPlaceState : PlayerState
     public override void OnExit()
     {
         base.OnExit();
-        EventCenter.Instance.Claer(E_EventType.E_ControlMirror);
+        EventCenter.Instance.Clear(E_EventType.E_ControlMirror);
         EventCenter.Instance.EventTrigger(E_EventType.E_LeaveMirrorPlace);
     }
 

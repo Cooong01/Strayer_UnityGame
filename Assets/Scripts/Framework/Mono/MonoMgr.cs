@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 /// <summary>
-/// 公共Mono模块管理器
+/// 公共Mono模块，所有非Mono脚本想执行mono的方法（比如开协程）可使用此脚本执行
 /// </summary>
 public class MonoMgr : SingletonAutoMono<MonoMgr>
 {
@@ -12,54 +12,29 @@ public class MonoMgr : SingletonAutoMono<MonoMgr>
     private event UnityAction fixedUpdateEvent;
     private event UnityAction lateUpdateEvent;
 
-    /// <summary>
-    /// 添加Update帧更新监听函数
-    /// </summary>
-    /// <param name="updateFun"></param>
     public void AddUpdateListener(UnityAction updateFun)
     {
         updateEvent += updateFun;
     }
-
-    /// <summary>
-    /// 移除Update帧更新监听函数
-    /// </summary>
-    /// <param name="updateFun"></param>
     public void RemoveUpdateListener(UnityAction updateFun)
     {
         updateEvent -= updateFun;
     }
 
-    /// <summary>
-    /// 添加FixedUpdate帧更新监听函数
-    /// </summary>
-    /// <param name="updateFun"></param>
     public void AddFixedUpdateListener(UnityAction updateFun)
     {
         fixedUpdateEvent += updateFun;
     }
-    /// <summary>
-    /// 移除FixedUpdate帧更新监听函数
-    /// </summary>
-    /// <param name="updateFun"></param>
     public void RemoveFixedUpdateListener(UnityAction updateFun)
     {
         fixedUpdateEvent -= updateFun;
     }
 
-    /// <summary>
-    /// 添加LateUpdate帧更新监听函数
-    /// </summary>
-    /// <param name="updateFun"></param>
     public void AddLateUpdateListener(UnityAction updateFun)
     {
         lateUpdateEvent += updateFun;
     }
 
-    /// <summary>
-    /// 移除LateUpdate帧更新监听函数
-    /// </summary>
-    /// <param name="updateFun"></param>
     public void RemoveLateUpdateListener(UnityAction updateFun)
     {
         lateUpdateEvent -= updateFun;

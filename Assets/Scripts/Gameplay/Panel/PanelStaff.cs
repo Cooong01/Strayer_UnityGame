@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 制作人员面板
+/// </summary>
 public class PanelStaff : BasePanel
 {
     public override void HideMe()

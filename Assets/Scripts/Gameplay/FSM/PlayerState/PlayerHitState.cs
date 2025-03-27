@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 受击
+/// 根据策划修改，受击将会立刻死亡。
+/// </summary>
 public class PlayerHitState : PlayerState
 {
     public PlayerHitState(PlayerFSM manager, string animationName) : base(manager, animationName) { }
@@ -14,7 +18,7 @@ public class PlayerHitState : PlayerState
     public override void OnUpdate()
     {
         base.OnUpdate();
-        if (parameter.HP <= 0) //血量到0直接死了
+        if (parameter.HP <= 0) //血量到0直接死亡
         {
             manager.TransitionState(E_PlayerStateType.Death);
         }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 状态机相关数据类的基类，状态机必有的数据
+/// 状态机相关数据类的基类
 /// </summary>
 [Serializable]
 public class Parameter : MonoBehaviour

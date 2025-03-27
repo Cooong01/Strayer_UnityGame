@@ -9,7 +9,7 @@ using UnityEngine.U2D;
 /// <summary>
 /// 继承了玩家状态机的控制类。
 /// 在这里写的是各种操控的回调函数。
-/// 这里要通过接收玩家输入，来改变对应参数的值。
+/// 通过接收玩家输入，在这里来改变对应参数的值。
 /// </summary>
 public class PlayerController : PlayerFSM
 {
@@ -111,6 +111,7 @@ public class PlayerController : PlayerFSM
         parameter.isClickJump = true;
         parameter.isClickStopJump = false;
         ////预输入计时
+        // 根据策划设计，预输入已废弃
         //StopCoroutine(PreInputExitTime());
         //StartCoroutine(PreInputExitTime());
     }

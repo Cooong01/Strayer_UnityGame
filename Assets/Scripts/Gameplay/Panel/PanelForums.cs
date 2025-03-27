@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 论坛关卡选关面板
+/// </summary>
 public class PanelForums : BasePanel
 {
     private bool onShow;

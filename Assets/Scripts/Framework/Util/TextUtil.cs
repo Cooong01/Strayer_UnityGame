@@ -5,6 +5,7 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.Events;
 
+
 /// <summary>
 /// 用于处理字符串的一些公共功能的
 /// </summary>
@@ -12,13 +13,13 @@ public class TextUtil
 {
     private static StringBuilder resultStr = new StringBuilder("");
 
-    #region 字符串拆分相关
+    #region 字符串拆分
     /// <summary>
-    /// 拆分字符串 返回字符串数组
+    /// 根据特定分隔符拆分字符串为字符串数组
     /// </summary>
     /// <param name="str">想要被拆分的字符串</param>
-    /// <param name="type">拆分字符类型： 1-; 2-, 3-% 4-: 5-空格 6-| 7-_ </param>
-    /// <returns></returns>
+    /// <param name="type">分隔符类型： 1对应‘;’ 2对应',' 3对应'%' 4对应':' 5对应'{space}' 6对应'|' 7对应'_' </param>
+    /// <returns>字符串数组</returns>
     public static string[] SplitStr(string str, int type = 1)
     {
         if (str == "")
@@ -26,14 +27,13 @@ public class TextUtil
         string newStr = str;
         if (type == 1)
         {
-            //为了避免英文符号填成了中文符号 我们先进行一个替换
+            //为了避免英文符号填成了中文符号，先进行替换
             while (newStr.IndexOf("；") != -1)
                 newStr = newStr.Replace("；", ";");
             return newStr.Split(';');
         }
         else if (type == 2)
         {
-            //为了避免英文符号填成了中文符号 我们先进行一个替换
             while (newStr.IndexOf("，") != -1)
                 newStr = newStr.Replace("，", ",");
             return newStr.Split(',');
@@ -44,7 +44,6 @@ public class TextUtil
         }
         else if (type == 4)
         {
-            //为了避免英文符号填成了中文符号 我们先进行一个替换
             while (newStr.IndexOf("：") != -1)
                 newStr = newStr.Replace("：", ":");
             return newStr.Split(':');
@@ -66,18 +65,16 @@ public class TextUtil
     }
 
     /// <summary>
-    /// 拆分字符串 返回整形数组
+    /// 根据特定分隔符拆分字符串为int数组
     /// </summary>
     /// <param name="str">想要被拆分的字符串</param>
-    /// <param name="type">拆分字符类型： 1-; 2-, 3-% 4-: 5-空格 6-| 7-_ </param>
+    /// <param name="type">分隔符类型： 1对应‘;’ 2对应',' 3对应'%' 4对应':' 5对应'{space}' 6对应'|' 7对应'_'</param>
     /// <returns></returns>
     public static int[] SplitStrToIntArr(string str, int type = 1)
     {
-        //得到拆分后的字符串数组
         string[] strs = SplitStr(str, type);
         if (strs.Length == 0)
             return new int[0];
-        //把字符串数组 转换成 int数组 
         return Array.ConvertAll<string, int>(strs, (str) =>
         {
             return int.Parse(str);
@@ -85,12 +82,12 @@ public class TextUtil
     }
 
     /// <summary>
-    /// 专门用来拆分多组键值对形式的数据的 以int返回
+    /// 根据特定分隔符拆分字符串为键值对（返回int:int类型）
     /// </summary>
     /// <param name="str">待拆分的字符串</param>
-    /// <param name="typeOne">组间分隔符  1-; 2-, 3-% 4-: 5-空格 6-| 7-_ </param>
-    /// <param name="typeTwo">键值对分隔符 1-; 2-, 3-% 4-: 5-空格 6-| 7-_ </param>
-    /// <param name="callBack">回调函数</param>
+    /// <param name="typeOne">组间分隔符  1对应‘;’ 2对应',' 3对应'%' 4对应':' 5对应'{space}' 6对应'|' 7对应'_'</param>
+    /// <param name="typeTwo">键值对分隔符 1对应‘;’ 2对应',' 3对应'%' 4对应':' 5对应'{space}' 6对应'|' 7对应'_' </param>
+    /// <param name="callBack">回调函数，逐键值对执行</param>
     public static void SplitStrToIntArrTwice(string str, int typeOne, int typeTwo, UnityAction<int, int> callBack)
     {
         string[] strs = SplitStr(str, typeOne);
@@ -99,7 +96,6 @@ public class TextUtil
         int[] ints;
         for (int i = 0; i < strs.Length; i++)
         {
-            //拆分单个道具的ID和数量信息
             ints = SplitStrToIntArr(strs[i], typeTwo);
             if (ints.Length == 0)
                 continue;
@@ -108,11 +104,11 @@ public class TextUtil
     }
 
     /// <summary>
-    /// 专门用来拆分多组键值对形式的数据的 以string返回
+    /// 根据特定分隔符拆分字符串为键值对（返回string:string类型）
     /// </summary>
     /// <param name="str">待拆分的字符串</param>
-    /// <param name="typeOne">组间分隔符 1-; 2-, 3-% 4-: 5-空格 6-| 7-_ </param>
-    /// <param name="typeTwo">键值对分隔符  1-; 2-, 3-% 4-: 5-空格 6-| 7-_ </param>
+    /// <param name="typeOne">组间分隔符 1对应‘;’ 2对应',' 3对应'%' 4对应':' 5对应'{space}' 6对应'|' 7对应'_'</param>
+    /// <param name="typeTwo">键值对分隔符  1对应‘;’ 2对应',' 3对应'%' 4对应':' 5对应'{space}' 6对应'|' 7对应'_' </param>
     /// <param name="callBack">回调函数</param>
     public static void SplitStrTwice(string str, int typeOne, int typeTwo, UnityAction<string, string> callBack)
     {
@@ -122,7 +118,6 @@ public class TextUtil
         string[] strs2;
         for (int i = 0; i < strs.Length; i++)
         {
-            //拆分单个道具的ID和数量信息
             strs2 = SplitStr(strs[i], typeTwo);
             if (strs2.Length == 0)
                 continue;
@@ -133,7 +128,7 @@ public class TextUtil
 
     #endregion
 
-    #region 数字转字符串相关
+    #region 数字转字符串
     /// <summary>
     /// 得到指定长度的数字转字符串内容，如果长度不够会在前面补0，如果长度超出，会保留原始数值
     /// </summary>
@@ -142,26 +137,21 @@ public class TextUtil
     /// <returns></returns>
     public static string GetNumStr(int value, int len)
     {
-        //tostring中传入一个 Dn 的字符串
-        //代表想要将数字转换为长度位n的字符串
-        //如果长度不够 会在前面补0
         return value.ToString($"D{len}");
     }
     /// <summary>
-    /// 让指定浮点数保留小数点后n位
+    /// 把指定浮点数保留小数点后n位
     /// </summary>
     /// <param name="value">具体的浮点数</param>
     /// <param name="len">保留小数点后n位</param>
     /// <returns></returns>
     public static string GetDecimalStr(float value, int len)
     {
-        //tostring中传入一个 Fn 的字符串
-        //代表想要保留小数点后几位小数
         return value.ToString($"F{len}");
     }
 
     /// <summary>
-    /// 将较大较长的数 转换为字符串
+    /// 将较大较长的数转换为汉字书写形式
     /// </summary>
     /// <param name="num">具体数值</param>
     /// <returns>n亿n千万 或 n万n千 或 1000 3434 234</returns>
@@ -183,7 +173,7 @@ public class TextUtil
     }
 
     /// <summary>
-    /// 把大数据转换成对应的字符串拼接
+    /// 大数字转换成对应的字符串拼接（单位字符可自定义）
     /// </summary>
     /// <param name="num">数值</param>
     /// <param name="company">分割单位 可以填 100000000、10000</param>
@@ -211,9 +201,9 @@ public class TextUtil
 
     #endregion
 
-    #region 时间转换相关
+    #region 时间转换
     /// <summary>
-    /// 秒转时分秒格式 其中时分秒可以自己传
+    /// 秒转时分秒格式 其中时分秒对应的字符可设置
     /// </summary>
     /// <param name="s">秒数</param>
     /// <param name="egZero">是否忽略0</param>
@@ -224,7 +214,7 @@ public class TextUtil
     /// <returns></returns>
     public static string SecondToHMS(int s, bool egZero = false, bool isKeepLen = false, string hourStr = "时", string minuteStr = "分", string secondStr = "秒")
     {
-        //时间不会有负数 所以我们如果发现是负数直接归0
+        //时间不会有负数，如果发现是负数直接归0
         if (s < 0)
             s = 0;
         //计算小时

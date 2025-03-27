@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// ´ý»ú
+/// </summary>
 public class PlayerIdleState : PlayerState
 {
     public PlayerIdleState(PlayerFSM manager, string animationName) : base(manager, animationName) { }

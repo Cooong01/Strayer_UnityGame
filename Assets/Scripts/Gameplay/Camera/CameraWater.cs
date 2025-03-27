@@ -1,5 +1,9 @@
 using UnityEngine;
 
+/// <summary>
+/// 根据水面高度进行相机视口适配
+/// 已废弃，因为项目中砍掉了水面设计。
+/// </summary>
 public class CameraWater : MonoBehaviour
 {
     public Transform BG; //关卡背景
@@ -18,12 +22,7 @@ public class CameraWater : MonoBehaviour
         float objectWidth = BG.lossyScale.x;
         float objectHeight = BG.lossyScale.y;
         float targetAspect = objectWidth / objectHeight;
-        // 设置相机的宽高比
         camera.aspect = targetAspect;
-
         camera.orthographicSize = objectHeight / 2;
-
-
-
     }
 }

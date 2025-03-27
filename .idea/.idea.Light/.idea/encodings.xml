@@ -4,5 +4,6 @@
     <file url="file://$PROJECT_DIR$/Assets/Scripts/Framework/AB/ABResMgr.cs" charset="GB2312" />
     <file url="file://$PROJECT_DIR$/Assets/Scripts/Framework/Music/MusicMgr.cs" charset="GB2312" />
     <file url="file://$PROJECT_DIR$/Assets/Scripts/Framework/UI/UIMgr.cs" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/FSM/PlayerState/PlayerMoveState.cs" charset="UTF-8" />
   </component>
 </project>

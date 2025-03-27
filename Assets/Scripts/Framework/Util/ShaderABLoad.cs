@@ -2,19 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 通过AB包加载shader
+/// </summary>
 public class ShaderABLoad : SingletonAutoMono<ShaderABLoad>
 {
-    private string path = "shaders/"; //固定为：Resources/shaders
-    //public void load(GameObject obj)
-    //{
-    //    TextMeshProUGUI[] TMP = obj.transform.GetComponentsInChildren<TextMeshProUGUI>();
-
-    //    foreach (var i in TMP)
-    //    {
-
-    //        i.font = Resources.Load<TMP_FontAsset>("Fonts/" + i.name);
-    //    }
-    //}
+    private string path = "shaders/"; //基于Resources
 
     public void Test(GameObject obj)
     {

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ItemRectangle : BaseFacility , IPointerDownHandler
+public class ItemRectangle : MonoBehaviour , IPointerDownHandler
 {
-    //用来计算可移动的直线路径的锚点
+    //路径锚点，用来计算可移动镜子的路径
     public GameObject anchor1;
     public GameObject anchor2;
 

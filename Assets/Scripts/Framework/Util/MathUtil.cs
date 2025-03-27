@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// 游戏数学工具。
+/// 提供如下工具方法：计算角度弧度、距离、视口检测、范围检测、射线检测
+/// </summary>
 public class MathUtil
 {
     #region 角度和弧度
@@ -28,7 +32,7 @@ public class MathUtil
     }
     #endregion
 
-    #region 距离计算相关的
+    #region 距离
     /// <summary>
     /// 获取XZ平面上 两点的距离
     /// </summary>
@@ -81,7 +85,7 @@ public class MathUtil
 
     #endregion
 
-    #region 位置判断相关
+    #region 位置判断
     /// <summary>
     /// 判断世界坐标系下的某一个点 是否在屏幕可见范围外
     /// </summary>

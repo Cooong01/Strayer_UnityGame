@@ -3,17 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 有限状态机的基类，包含最基本的必要的方法
+/// 有限状态机基类
 /// </summary>
 public class FiniteStateMachine : MonoBehaviour
 {
-    private IState currentState;        // 当前状态接口
-    protected Dictionary<E_PlayerStateType, IState> states = new Dictionary<E_PlayerStateType, IState>();  // 状态字典，存储各种状态
-
-    /// <summary>
-    /// 状态机生成的时候调用，也就是说一个角色出现的时候调用。
-    /// 这里写的是空闲，也可以改成其他内容
-    /// </summary>
+    private IState currentState; //当前状态接口
+    protected Dictionary<E_PlayerStateType, IState> states = new Dictionary<E_PlayerStateType, IState>(); //状态池
+    
     protected virtual void Awake()
     {
         TransitionState(E_PlayerStateType.Idle);
@@ -34,7 +30,6 @@ public class FiniteStateMachine : MonoBehaviour
         currentState.OnFixedUpdate();
     }
 
-    // 状态转换方法，先调用当前状态的退出方法，然后调用下一个状态的进入方法
     public void TransitionState(E_PlayerStateType type)
     {
         if (currentState != null)
@@ -44,7 +39,7 @@ public class FiniteStateMachine : MonoBehaviour
         currentState.OnEnter(); 
     }
 
-    // 翻转角色
+    //翻转角色
     public virtual void FlipTo() { }
 
 }

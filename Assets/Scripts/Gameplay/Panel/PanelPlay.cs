@@ -330,6 +330,7 @@ public class PanelPlay : BasePanel
     }
 
     //玩家受击时处理HP，做血条减少的方法
+    //已废弃，当前不设计血条
     public void Hit()
     {
         
@@ -345,6 +346,7 @@ public class PanelPlay : BasePanel
     }
 
     //逐渐减少血条的方法
+    //已废弃，策划不设计血条
     private void DecreasingHP()
     {
         //规定：血条血量贴图的名字：HP1,HP2,HP3

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 角色传送的状态
+/// 角色传送
 /// </summary>
 public class PlayerTransferState : PlayerState
 {

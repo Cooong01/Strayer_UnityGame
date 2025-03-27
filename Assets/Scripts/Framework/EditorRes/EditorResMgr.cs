@@ -5,18 +5,15 @@ using UnityEngine;
 
 
 /// <summary>
-/// 编辑器资源管理器
-/// 注意：只有在开发时能使用该管理器加载资源 用于开发功能
-/// 发布后 是无法使用该管理器的 因为它需要用到编辑器相关功能
+/// 资源管理器-编辑器加载版
+/// 仅用于编辑器模式加载资源
 /// </summary>
 public class EditorResMgr : BaseManager<EditorResMgr>
 {
-    //用于放置需要打包进AB包中的资源的路径 
+    //需要打包进AB包中的资源的路径 
     private string rootPath = "Assets/Editor/ArtRes/";
-
     private EditorResMgr() { }
 
-    //1.加载单个资源的
     public T LoadEditorRes<T>(string path) where T:Object
     {
 #if UNITY_EDITOR
@@ -39,13 +36,12 @@ public class EditorResMgr : BaseManager<EditorResMgr>
 #endif
     }
 
-    //2.加载图集相关资源的
+    //图集内单个资源加载
     public Sprite LoadSprite(string path, string spriteName)
     {
 #if UNITY_EDITOR
-        //加载图集中的所有子资源 
         Object[] sprites = AssetDatabase.LoadAllAssetRepresentationsAtPath(rootPath + path);
-        //遍历所有子资源 得到同名图片返回
+        //遍历图集里所有资源 得到同名图片返回
         foreach (var item in sprites)
         {
             if (spriteName == item.name)
@@ -57,7 +53,7 @@ public class EditorResMgr : BaseManager<EditorResMgr>
 #endif
     }
 
-    //加载图集文件中的所有子图片并返回给外部
+    //图集资源加载
     public Dictionary<string, Sprite> LoadSprites(string path)
     {
 #if UNITY_EDITOR

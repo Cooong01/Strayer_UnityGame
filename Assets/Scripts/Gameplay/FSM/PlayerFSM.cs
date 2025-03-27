@@ -8,7 +8,7 @@ using UnityEngine.U2D;
 /// </summary>
 public class PlayerFSM : FiniteStateMachine
 {
-    public PlayerParameter parameter;  // 状态机参数
+    public PlayerParameter parameter;  //状态机参数
     protected override void Awake()
     {
         Debug.Log(transform.gameObject.name);

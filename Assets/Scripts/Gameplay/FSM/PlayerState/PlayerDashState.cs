@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// ³å·æ
+/// </summary>
 public class PlayerDashState : PlayerState
 {
     public PlayerDashState(PlayerFSM manager, string animationName) : base(manager, animationName) { }

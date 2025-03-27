@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+///  ß∞‹√Ê∞Â
+/// </summary>
 public class PanelLose : BasePanel
 {
     public override void HideMe()

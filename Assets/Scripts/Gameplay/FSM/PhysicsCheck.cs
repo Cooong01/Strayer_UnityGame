@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D;
 
-// 主要用来进行碰撞检测
+/// <summary>
+/// 物理检测类
+/// </summary>
 public class PhysicsCheck : MonoBehaviour
 {
     [Header("地面检测")]
@@ -79,7 +81,7 @@ public class PhysicsCheck : MonoBehaviour
 
     private void Start()
     {
-        EventCenter.Instance.AddEventListener(E_EventType.E_canSuccess, CanSuccess);
+        EventCenter.Instance.AddEventListener(E_EventType.E_isValid2SaveNPC, CanSuccess);
     }
 
     private void CanSuccess()

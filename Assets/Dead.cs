@@ -17,9 +17,9 @@ public class Dead : MonoBehaviour
     }
 
     public void RealDead() {
-        GameObject circle = transform.parent.gameObject;
+        CircleCollider2D circle = transform.parent.gameObject.GetComponent<CircleCollider2D>();
         if (circle != null) {
-            circle.gameObject.SetActive(false);
+            circle.enabled = false;
         }
     
     }

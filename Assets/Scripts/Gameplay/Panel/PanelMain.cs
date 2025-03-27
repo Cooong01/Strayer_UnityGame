@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Ö÷Ãæ°å
+/// </summary>
 public class PanelMain : BasePanel
 {
     public override void HideMe()

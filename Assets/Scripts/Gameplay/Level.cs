@@ -4,13 +4,13 @@ using System.Text.RegularExpressions;
 using UnityEngine;
 
 /// <summary>
-/// 处理关卡逻辑的单例。
+/// 关卡管理器
 /// </summary>
 public class Level : SingletonMono<Level>
 {
     public List<string> bigLevels = new List<string> { "Tutoral", "Forum", "Store","ShortVideo"};
 
-    //游戏内配置的关卡信息，玩家不可改，键是大关名，值是小关预制体名
+    //游戏内配置的关卡信息，键是大关名，值是小关预制体名
     public Dictionary<string, List<string>> levelDetail = new Dictionary<string, List<string>> { 
     {"Tutoral",new List<string> { "level0-1", "level0-2", "level0-3"} },
     {"Forum",new List<string> { "level1-1", "level1-2", "level1-3" } },
@@ -47,7 +47,8 @@ public class Level : SingletonMono<Level>
 
 
 
-    //游戏内配置的关卡信息，玩家不可改，键是大关名，值是小关预制体名
+    //补充注释：另一位程序所写
+    //NPC配置信息，键是大关名，值是小关预制体名
     public Dictionary<string, List<string>> NpcNum = new Dictionary<string, List<string>> {
     {"PanelTip(Clone)",new List<string> { " ", " ", " "} },
     {"PanelForums(Clone)",new List<string> { "0/1", "0/1", "0/1" } },
@@ -66,16 +67,13 @@ public class Level : SingletonMono<Level>
         player.transform.position = player.GetComponent<PlayerController>().parameter.defaultPosition;
     }
 
-    //用来管理进入下一关的流程的主函数。外部直接调用此函数即可。
+    //用来管理进入下一关的流程的主函数入口
     public void EnterNextLevel()
     {
-
         SetNpcNum();
         player.GetComponent<PlayerController>().parameter.isEnteringNextLevel = true;
         //然后加载下一关。玩家移动包含在内。
         InitNextLevel(LevelNext(nowLevelBig, nowLevelSmall).Item1, LevelNext(nowLevelBig, nowLevelSmall).Item2);
-
-
     }
 
     //再初始化一次当前的关卡
@@ -131,12 +129,12 @@ public class Level : SingletonMono<Level>
             player.transform.position = start.transform.position; //玩家位置初始化
             nowLevelBig = big;
             nowLevelSmall = small;
-            //todo:设置边缘碰撞体
             ; },isSync:true);
     }
 
     /// <summary>
-    /// 初始化下一关的方法。异步加载关卡，获得关卡开始或结束的标记，放置关卡到合适的位置
+    /// 初始化下一关的方法。
+    /// 实现：异步加载关卡，获得关卡开始或结束的标记，将关卡对齐到合适的位置
     /// </summary>
     private void InitNextLevel(int big, int small)
     {
@@ -169,18 +167,15 @@ public class Level : SingletonMono<Level>
         ABResMgr.Instance.LoadResAsync<GameObject>(levelDic, prefabName, (t) => {
             float x = nowLevelObj.transform.position.x;
             nextLevelObj = Instantiate(t);
-            print(nextLevelObj.name);
             nextLevelObj.transform.position = new Vector3( x + offSet, nowLevelObj.transform.position.y, nowLevelObj.transform.position.z);
-
             player.SetActive(true);
-            print(nextLevelObj.name);
             start = nextLevelObj.transform.Find("Start").gameObject;
             end = nextLevelObj.transform.Find("End").gameObject;
             nextAirWall = nextLevelObj.transform.Find("AirWall").gameObject;
             nextAirWall.SetActive(false);
             nowLevelBig = big;
             nowLevelSmall = small;
-            ;
+            
         });
     }
 
@@ -219,7 +214,7 @@ public class Level : SingletonMono<Level>
     }
 
     /// <summary>
-    /// 找到下一个关卡。在下一个关卡
+    /// 找到下一个关卡
     /// </summary>
     /// <param name="big">大关名</param>
     /// <param name="small">小关预制体名</param>
@@ -276,7 +271,7 @@ public class Level : SingletonMono<Level>
 
     }
 
-    
+    // -----写AI的程序所负责，作用未知-----
     void SetNpcNum() {
         CheckResult end = GameObject.FindFirstObjectByType<CheckResult>();
         string LevelNum = "";

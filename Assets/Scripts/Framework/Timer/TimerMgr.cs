@@ -8,50 +8,35 @@ using UnityEngine.Events;
 /// </summary>
 public class TimerMgr : BaseManager<TimerMgr>
 {
-    /// <summary>
-    /// 用于记录当前将要创建的唯一ID的
-    /// </summary>
-    private int TIMER_KEY = 0;
-    /// <summary>
-    /// 用于存储管理所有计时器的字典容器
-    /// </summary>
-    private Dictionary<int, TimerItem> timerDic = new Dictionary<int, TimerItem>();
-    /// <summary>
-    /// 用于存储管理所有计时器的字典容器（不受Time.timeScale影响的计时器）
-    /// </summary>
-    private Dictionary<int, TimerItem> realTimerDic = new Dictionary<int, TimerItem>();
-    /// <summary>
-    /// 待移除列表
-    /// </summary>
-    private List<TimerItem> delList = new List<TimerItem>();
-
-    //为了避免内存的浪费 每次while都会生成 
-    //我们直接将其声明为成员变量
-    private WaitForSecondsRealtime waitForSecondsRealtime = new WaitForSecondsRealtime(intervalTime);
-    private WaitForSeconds waitForSeconds = new WaitForSeconds(intervalTime);
+    private int TIMER_KEY = 0; //用于创建计时器唯一ID
+    private Dictionary<int, TimerItem> timerDic = new Dictionary<int, TimerItem>(); //普通计时器池
+    private Dictionary<int, TimerItem> realTimerDic = new Dictionary<int, TimerItem>(); //不受Time.timeScale影响的计时器池
+    private List<TimerItem> delList = new List<TimerItem>(); //待移除的计时器池
+    
+    private WaitForSecondsRealtime waitForSecondsRealtime = new WaitForSecondsRealtime(intervalTime); //为了节省频繁调用，直接使用同一个对象，否则该对象将频繁声明
+    private WaitForSeconds waitForSeconds = new WaitForSeconds(intervalTime); //同上
 
     private Coroutine timer;
     private Coroutine realTimer;
-
-    /// <summary>
-    /// 计时器管理器中的唯一计时用的协同程序 的间隔时间
-    /// </summary>
-    private const float intervalTime = 0.1f;
+    private const float intervalTime = 0.1f; //计时的时间粒度，单位：秒
 
     private TimerMgr() 
     {
-        //默认计时器就是开启的
-        Start();
+        Start(); //默认开启计时器
     }
 
-    //开启计时器管理器的方法
+    /// <summary>
+    /// 开启计时器
+    /// </summary>
     public void Start()
     {
-        timer = MonoMgr.Instance.StartCoroutine(StartTiming(false, timerDic));
-        realTimer = MonoMgr.Instance.StartCoroutine(StartTiming(true, realTimerDic));
+        timer = MonoMgr.Instance.StartCoroutine(RunTimer(false, timerDic));
+        realTimer = MonoMgr.Instance.StartCoroutine(RunTimer(true, realTimerDic));
     }
 
-    //关闭计时器管理器的方法
+    /// <summary>
+    /// 停止计时器
+    /// </summary>
     public void Stop()
     {
         MonoMgr.Instance.StopCoroutine(timer);
@@ -59,53 +44,40 @@ public class TimerMgr : BaseManager<TimerMgr>
     }
 
 
-    IEnumerator StartTiming(bool isRealTime, Dictionary<int, TimerItem> timerDic)
+    //运行所有计时器
+    IEnumerator RunTimer(bool isRealTime, Dictionary<int, TimerItem> timerDic)
     {
         while (true)
         {
-            //100毫秒进行一次计时
             if (isRealTime)
                 yield return waitForSecondsRealtime;
             else
                 yield return waitForSeconds;
-            //遍历所有的计时器 进行数据更新
             foreach (TimerItem item in timerDic.Values)
             {
                 if (!item.isRuning)
                     continue;
-                //判断计时器是否有间隔时间执行的需求
-                if(item.callBack != null)
+                if(item.callBack != null) //运行间隔计时
                 {
-                    //减去100毫秒
                     item.intervalTime -= (int)(intervalTime*1000);
-                    //满足一次间隔时间执行
                     if(item.intervalTime <= 0)
                     {
-                        //间隔一定时间 执行一次回调
                         item.callBack.Invoke();
-                        //重置间隔时间
-                        item.intervalTime = item.maxIntervalTime;
+                        item.intervalTime = item.maxIntervalTime; //重置当前间隔时间
                     }
                 }
-                //总的时间更新
-                item.allTime -= (int)(intervalTime * 1000);
-                //计时时间到 需要执行完成回调函数
+                item.allTime -= (int)(intervalTime * 1000); //运行目标计时
                 if(item.allTime <= 0)
                 {
                     item.overCallBack.Invoke();
                     delList.Add(item);
                 }
             }
-
-            //移除待移除列表中的数据
             for (int i = 0; i < delList.Count; i++)
             {
-                //从字典中移除
                 timerDic.Remove(delList[i].keyID);
-                //放入缓存池中
                 PoolMgr.Instance.PushObj(delList[i]);
             }
-            //移除结束后 清空列表
             delList.Clear();
         }
     }
@@ -113,21 +85,17 @@ public class TimerMgr : BaseManager<TimerMgr>
     /// <summary>
     /// 创建单个计时器
     /// </summary>
-    /// <param name="isRealTime">如果是true不受Time.timeScale影响</param>
-    /// <param name="allTime">总的时间 毫秒 1s=1000ms</param>
-    /// <param name="overCallBack">总时间结束回调</param>
-    /// <param name="intervalTime">间隔计时时间 毫秒 1s=1000ms</param>
-    /// <param name="callBack">间隔计时时间结束 回调</param>
+    /// <param name="isRealTime">true则不受Time.timeScale影响</param>
+    /// <param name="allTime">目标时间，单位：毫秒</param>
+    /// <param name="overCallBack">达到目标时间的回调</param>
+    /// <param name="intervalTime">间隔时间，单位：毫秒</param>
+    /// <param name="callBack">每到间隔时间的回调</param>
     /// <returns>返回唯一ID 用于外部控制对应计时器</returns>
     public int CreateTimer(bool isRealTime, int allTime, UnityAction overCallBack, int intervalTime = 0, UnityAction callBack = null)
     {
-        //构建唯一ID
         int keyID = ++TIMER_KEY;
-        //从缓存池取出对应的计时器
         TimerItem timerItem = PoolMgr.Instance.GetObj<TimerItem>();
-        //初始化数据
         timerItem.InitInfo(keyID, allTime, overCallBack, intervalTime, callBack);
-        //记录到字典中 进行数据更新
         if (isRealTime)
             realTimerDic.Add(keyID, timerItem);
         else
@@ -135,27 +103,26 @@ public class TimerMgr : BaseManager<TimerMgr>
         return keyID;
     }
 
-    //移除单个计时器
+    /// <summary>
+    /// 移除指定计时器
+    /// </summary>
+    /// <param name="keyID">计时器唯一ID</param>
     public void RemoveTimer(int keyID)
     {
         if(timerDic.ContainsKey(keyID))
         {
-            //移除对应id计时器 放入缓存池
             PoolMgr.Instance.PushObj(timerDic[keyID]);
-            //从字典中移除
             timerDic.Remove(keyID);
         }
         else if (realTimerDic.ContainsKey(keyID))
         {
-            //移除对应id计时器 放入缓存池
             PoolMgr.Instance.PushObj(realTimerDic[keyID]);
-            //从字典中移除
             realTimerDic.Remove(keyID);
         }
     }
 
     /// <summary>
-    /// 重置单个计时器
+    /// 重置指定计时器
     /// </summary>
     /// <param name="keyID">计时器唯一ID</param>
     public void ResetTimer(int keyID)
@@ -171,7 +138,7 @@ public class TimerMgr : BaseManager<TimerMgr>
     }
 
     /// <summary>
-    /// 开启当个计时器 主要用于暂停后重新开始
+    /// 开启指定计时器
     /// </summary>
     /// <param name="keyID">计时器唯一ID</param>
     public void StartTimer(int keyID)
@@ -187,7 +154,7 @@ public class TimerMgr : BaseManager<TimerMgr>
     }
 
     /// <summary>
-    /// 停止单个计时器 主要用于暂停
+    /// 停止指定计时器
     /// </summary>
     /// <param name="keyID">计时器唯一ID</param>
     public void StopTimer(int keyID)

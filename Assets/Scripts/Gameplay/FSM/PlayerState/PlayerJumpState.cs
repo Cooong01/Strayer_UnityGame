@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// ¿ªÊ¼ÌøÔ¾
+/// </summary>
 public class PlayerJumpState : PlayerState
 {
     public PlayerJumpState(PlayerFSM manager, string animationName) : base(manager, animationName) { }

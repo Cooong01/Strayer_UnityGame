@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 该脚本主要用于挂载到需要使用缓存池功能的预设体对象上
+/// 挂在需要使用缓存池的预制体上，用于设定该预制体所用的池子大小
 /// </summary>
-public class PoolObj : MonoBehaviour
+public abstract class PoolObj : MonoBehaviour,IPoolObject
 {
     public int maxNum;
+    public abstract void Reset();
 }

@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 绉诲姩
+/// </summary>
 public class PlayerMoveState : PlayerState
 {
     public PlayerMoveState(PlayerFSM manager, string animationName) : base(manager, animationName) { }
@@ -9,7 +12,7 @@ public class PlayerMoveState : PlayerState
     public override void OnEnter()
     {
         base.OnEnter();
-        Debug.Log("正在移动状态");
+        Debug.Log("?????????");
     }
 
     public override void OnUpdate()
@@ -48,7 +51,7 @@ public class PlayerMoveState : PlayerState
         {
             manager.TransitionState(E_PlayerStateType.Mirror_transfer);
         }
-        //把现在的速度逐渐变成默认移速，模仿加速的过程
+        //????????????????????????????????
         parameter.currentSpeed = Mathf.MoveTowards(parameter.currentSpeed, parameter.normalSpeed, parameter.acceration * Time.deltaTime);
     }
 

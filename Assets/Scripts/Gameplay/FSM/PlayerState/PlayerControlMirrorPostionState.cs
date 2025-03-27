@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D;
 
+/// <summary>
+/// ¿ØÖÆ¾µ×ÓÎ»ÖÃ
+/// </summary>
 public class PlayerControlMirrorPostionState : PlayerState
 {
     public PlayerControlMirrorPostionState(PlayerFSM manager, string animationName) : base(manager, animationName) { }
@@ -112,8 +115,8 @@ public class PlayerControlMirrorPostionState : PlayerState
         parameter.nowControlMirrorNumber = 0;
 
         EventCenter.Instance.EventTrigger(E_EventType.E_LeaveMirrorPlace);
-        EventCenter.Instance.Claer(E_EventType.E_PressMirrorSetButton);
-        EventCenter.Instance.Claer(E_EventType.E_PressMirrorOrientationButton);
+        EventCenter.Instance.Clear(E_EventType.E_PressMirrorSetButton);
+        EventCenter.Instance.Clear(E_EventType.E_PressMirrorOrientationButton);
 
     }
 

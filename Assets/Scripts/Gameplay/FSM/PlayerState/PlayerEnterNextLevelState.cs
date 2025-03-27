@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+/// <summary>
+/// 进入下一关
+/// </summary>
 public class PlayerEnterNextLevelState : PlayerState
 {
     public PlayerEnterNextLevelState(PlayerFSM manager, string animationName) : base(manager, animationName) { }
